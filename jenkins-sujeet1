@@ -11,8 +11,8 @@ pipeline {
         
            stage ('build') {
                steps {
-                    sh "mvn clean package"
-                    sh "mv target/*.war target/myweb.war"
+                    sh 'mvn clean package'
+                    sh 'mv target/*.war target/myweb.war'
                      }
            }
  }  
