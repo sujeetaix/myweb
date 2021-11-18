@@ -1,0 +1,17 @@
+pipeline {
+      agent any
+      
+       stages {
+           stage ('checkout') {
+           steps {
+                 git credentialsId: 'GIT_HUB_CREDENTIALS', url: 'https://github.com/sujeetaix/myweb.git'
+                 }
+            }
+            
+              
+    stage("building") {
+                sh "mvn clean package"
+                sh "mv target/*.war target/myweb.war"
+    }
+}
+}
