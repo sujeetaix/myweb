@@ -11,8 +11,9 @@ pipeline {
               
     stage("building") {
            steps{ 
-                def mvnHome= tool name:'mvn'
-                sh "mvn clean package"
+                def mvnHome = tool name:'mvn', type: 'mvn'
+                def mvnCMD = "${mvnHome}/bin/mvn"
+                sh "${mvnCMD} clean package"
                 sh "mv target/*.war target/myweb.war"
     }
 }
