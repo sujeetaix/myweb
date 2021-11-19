@@ -11,11 +11,10 @@ pipeline {
               
     stage("building") {
            steps{ 
-                def mvnHome = tool name:'mvn', type: 'mvn'
-                def mvnCMD = "${mvnHome}/bin/mvn"
-                sh "${mvnCMD} clean package"
-                sh "mv target/*.war target/myweb.war"
-    }
+                export MAVEN_HOME=/opt/apache-maven-3.8.2/
+                sh "mvn --version"
+                sh "mvn clean package"
+                }
 }
 }
 }
