@@ -11,9 +11,8 @@ pipeline {
               
     stage("building") {
            steps{ 
-                export MAVEN_HOME=/opt/apache-maven-3.8.2/
-                sh "mvn --version"
                 sh "mvn clean package"
+                sh "mv target/*.war target/myweb.war"
                 }
 }
 }
