@@ -7,11 +7,12 @@ pipeline {
                  git credentialsId: 'GIT_HUB_CREDENTIALS', url: 'https://github.com/sujeetaix/myweb.git'
                  }
                }
-             }  
-            stage ('build') {
-            steps {
+             
+             stage ('build') {
+             steps {
                   sh "mvn clean package"
                   sh "mv target/*.war target/myweb.war"  
                   }
                  } 
+            }
             } 
