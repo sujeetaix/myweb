@@ -4,4 +4,7 @@ pipeline {
        stages {
            stage ('checkout') {
            steps {
-                  
+                 git credentialsId: 'GIT_HUB_CREDENTIALS', url: 'https://github.com/sujeetaix/myweb.git'
+                 }
+               }
+             }  
